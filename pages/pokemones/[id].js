@@ -14,8 +14,6 @@ const Pokemon = ({data}) => {
 
 export default Pokemon
 
-
-
 export const getStaticProps = async ({params}) => {
   const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${params.id}`)  
   const data = await response.json()
@@ -32,7 +30,7 @@ export const getStaticPaths = async () => {
 
   return {
     paths,
-    fallback: true,
+    fallback: 'bloking',
   }
 }
 
